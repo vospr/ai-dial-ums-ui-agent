@@ -29,6 +29,7 @@ services:
       - USERS_MANAGEMENT_SERVICE_URL=${USERS_MANAGEMENT_SERVICE_URL:-http://host.docker.internal:8041}
     volumes:
       - ./data:/app/data
+      - ./docker/ums-mcp-server/server.py:/app/server.py:ro
     restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:8005/health || exit 1"]

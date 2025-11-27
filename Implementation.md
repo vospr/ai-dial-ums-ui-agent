@@ -28,7 +28,7 @@ cd /mnt/c/Users/AndreyPopov/ai-dial-ums-ui-agent
 
 ```bash
 # Export DIAL API key
-export DIAL_API_KEY="dial-YOUR-API-KEY-HERE"
+export DIAL_API_KEY="dial-fxbasxs2h6t7brhnbqs36omhe2y"
 
 # Optional: Override defaults
 export ORCHESTRATION_MODEL="gpt-4o"  # or "claude-3-7-sonnet@20250219"
@@ -43,7 +43,7 @@ echo $DIAL_API_KEY
 
 **Add to `.bashrc` for persistence:**
 ```bash
-echo 'export DIAL_API_KEY="dial-YOUR-KEY"' >> ~/.bashrc
+echo 'export DIAL_API_KEY="dial-fxbasxs2h6t7brhnbqs36omhe2y"' >> ~/.bashrc
 source ~/.bashrc
 ```
 

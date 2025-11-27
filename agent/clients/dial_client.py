@@ -217,8 +217,8 @@ class DialClient:
         )
 
         for tool_call in ai_message.tool_calls:
-            tool_name = tool_call.function.name
-            tool_args = json.loads(tool_call.function.arguments)
+            tool_name = tool_call["function"]["name"]
+            tool_args = json.loads(tool_call["function"]["arguments"])
 
             logger.debug(
                 "Processing tool call",
@@ -232,7 +232,7 @@ class DialClient:
                 tool_message = Message(
                     role=Role.TOOL,
                     content=error_msg,
-                    tool_call_id=tool_call.id
+                    tool_call_id=tool_call["id"]
                 )
                 messages.append(tool_message)
                 continue
@@ -257,7 +257,7 @@ class DialClient:
             tool_message = Message(
                 role=Role.TOOL,
                 content=str(tool_result),
-                tool_call_id=tool_call.id
+                tool_call_id=tool_call["id"]
             )
             messages.append(tool_message)
 
